@@ -1,0 +1,17 @@
+# 数据库与运行产物
+backend/mingli.db
+backend/*.db
+backend/__pycache__/
+__pycache__/
+*.pyc
+
+# 编辑器与系统垃圾
+.vscode/
+.idea/
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# 本地临时文件
+*.log
+.imp-test.json

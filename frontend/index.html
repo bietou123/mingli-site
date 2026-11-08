@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>玄机阁 · 命理推演</title>
+  <meta name="description" content="八字排盘 · 六爻起卦 · 紫微斗数 —— 全部离线本地推演，不依赖网络。">
+  <meta name="theme-color" content="#0d0a14">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" type="image/svg+xml" href="icon.svg">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- 背景光晕 -->
+  <div class="bg-orbs" aria-hidden="true">
+    <div class="orb orb-a"></div>
+    <div class="orb orb-b"></div>
+    <div class="orb orb-c"></div>
+  </div>
+
+  <header class="topbar glass">
+    <a class="brand" href="#/" aria-label="玄机阁首页">
+      <span class="brand-seal">玄</span>
+      <span class="brand-text">玄机阁<small>离线命理推演</small></span>
+    </a>
+    <nav class="nav" id="nav">
+      <a href="#/" data-route="home">首页</a>
+      <a href="#/bazi" data-route="bazi">八字</a>
+      <a href="#/liuyao" data-route="liuyao">六爻</a>
+      <a href="#/ziwei" data-route="ziwei">紫微</a>
+      <a href="#/profiles" data-route="profiles">档案</a>
+    </nav>
+  </header>
+
+  <main id="view" class="view"></main>
+
+  <footer class="footer">
+    <p>玄机阁 · 全部排盘于本地离线计算，不依赖网络 · 预测当雷达，不当牢笼</p>
+    <p class="footer-year">© <span id="year">2026</span> 玄机阁</p>
+  </footer>
+
+  <script type="module" src="js/app/main.js"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

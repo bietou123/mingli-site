@@ -1,0 +1,20 @@
+{
+  "name": "玄机阁 · 离线命理推演",
+  "short_name": "玄机阁",
+  "description": "八字排盘 · 六爻起卦 · 紫微斗数 —— 全部离线本地推演，不依赖网络",
+  "lang": "zh-CN",
+  "start_url": "./index.html#/home",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#0d0a14",
+  "theme_color": "#0d0a14",
+  "icons": [
+    { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ],
+  "shortcuts": [
+    { "name": "今日黄历", "short_name": "黄历", "description": "建除十二神 · 宜忌择日", "url": "./index.html#/home", "icons": [ { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml" } ] },
+    { "name": "八字排盘", "short_name": "八字", "description": "四柱 · 格局 · 大运流年", "url": "./index.html#/bazi", "icons": [ { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml" } ] },
+    { "name": "六爻起卦", "short_name": "六爻", "description": "摇钱 / 时间起卦 · 断卦", "url": "./index.html#/liuyao", "icons": [ { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml" } ] },
+    { "name": "紫微斗数", "short_name": "紫微", "description": "十二宫 · 流年四化", "url": "./index.html#/ziwei", "icons": [ { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml" } ] }
+  ]
+}
