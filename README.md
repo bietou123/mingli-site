@@ -1,8 +1,23 @@
 # 玄机阁 · 离线命理推演
 
+<!-- project-guide:start -->
+## 图文原理导览
+
+八字、六爻、紫微三套浏览器计算引擎，加一个负责静态托管和本地 SQLite 命主档案的 FastAPI 服务。离线排盘与档案存取是两条独立链路。
+
+![玄机阁：离线命理推演工作原理图](docs/images/principle.png)
+
+**主链路：** 浏览器输入 -> 本地引擎 -> 页面呈现 -> 可选档案保存。
+
+**数据与边界：** 档案在本机 SQLite；导出文件包含个人资料，应自行保管。 本地服务提供档案 API；浏览器内排盘不调用外部接口。
+
+[完整图文说明、源码入口与运行步骤](docs/PROJECT_GUIDE.md)
+
+<!-- project-guide:end -->
+
 八字排盘、六爻起卦、紫微斗数三套引擎，加本地命主档案管理。排盘全部在浏览器里离线计算，后端只负责静态托管与 SQLite 档案存取，不调用任何外部接口、不上传任何数据。
 
-纯前端 **原生 JavaScript**（无框架、无构建步骤）＋ **FastAPI + SQLite** 后端，一条 `start.bat` / `start.sh` 即可跑起来，也可以直接双击 `frontend/index.html` 使用离线功能。
+纯前端 **原生 JavaScript**（无框架、无构建步骤）＋ **FastAPI + SQLite** 后端，一条 `start.bat` / `start.sh` 即可跑起来。排盘在浏览器本地完成，但页面使用 ES Modules，需要通过本机 HTTP 服务加载，不能直接双击 `frontend/index.html`。
 
 ## 功能
 
@@ -50,7 +65,7 @@ chmod +x start.sh && ./start.sh
 
 首次运行会自动 `pip install -r backend/requirements.txt`（fastapi、uvicorn）。
 
-只想用排盘、不需要档案功能时，也可以直接双击 `frontend/index.html`——引擎和页面都是纯前端的。
+只想用排盘、不需要档案功能时，可运行 `python -m http.server 8000 --bind 127.0.0.1 --directory frontend`，再打开 `http://127.0.0.1:8000`。这个静态服务不提供档案 API；排盘仍在浏览器本地计算。
 
 ## 目录结构
 
